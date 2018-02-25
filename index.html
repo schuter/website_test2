@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
   <link rel="stylesheet" href="theme.css" type="text/css">
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src = "https://code.highcharts.com/highcharts.js"></script> 
 </head>
 
 <body>
@@ -52,74 +52,82 @@
               <h1 class="display-3 text-light text-right">Secondary Header</h1>
               <p class="text-light text-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
             </div>
-            <div id="container" style="width: 100%; height: 400px;">
-             <script language = "JavaScript">
-         $(document).ready(function() {
-            var title = {
-               text: 'Monthly Average Temperature'   
-            };
-            var subtitle = {
-               text: 'Source: WorldClimate.com'
-            };
-            var xAxis = {
-               categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-                  'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-            };
-            var yAxis = {
-               title: {
-                  text: 'Temperature (\xB0C)'
-               },
-               plotLines: [{
-                  value: 0,
-                  width: 1,
-                  color: '#808080'
-               }]
-            };   
+            <div id = "container" style = "width: 550px; height: 400px; margin: 0 auto"></div>
+      <script language = "JavaScript">
+// Data gathered from http://populationpyramid.net/germany/2015/
 
-            var tooltip = {
-               valueSuffix: '\xB0C'
+// Age categories
+var categories = [
+    '0-4', '5-9', '10-14', '15-19',
+    '20-24', '25-29', '30-34', '35-39', '40-44',
+    '45-49', '50-54', '55-59', '60-64', '65-69',
+    '70-74', '75-79', '80-84', '85-89', '90-94',
+    '95-99', '100 + '
+];
+
+Highcharts.chart('container', {
+    chart: {
+        type: 'bar'
+    },
+    title: {
+        text: 'Population pyramid for Germany, 2015'
+    },
+    subtitle: {
+        text: 'Source: <a href="http://populationpyramid.net/germany/2015/">Population Pyramids of the World from 1950 to 2100</a>'
+    },
+    xAxis: [{
+        categories: categories,
+        reversed: false,
+        labels: {
+            step: 1
+        }
+    }, { // mirror axis on right side
+        opposite: true,
+        reversed: false,
+        categories: categories,
+        linkedTo: 0,
+        labels: {
+            step: 1
+        }
+    }],
+    yAxis: {
+        title: {
+            text: null
+        },
+        labels: {
+            formatter: function () {
+                return Math.abs(this.value) + '%';
             }
-            var legend = {
-               layout: 'vertical',
-               align: 'right',
-               verticalAlign: 'middle',
-               borderWidth: 0
-            };
-            var series =  [{
-                  name: 'Tokyo',
-                  data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2,
-                     26.5, 23.3, 18.3, 13.9, 9.6]
-               }, 
-               {
-                  name: 'New York',
-                  data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 
-                     24.1, 20.1, 14.1, 8.6, 2.5]
-               }, 
-               {
-                  name: 'Berlin',
-                  data: [-0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6,
-                     17.9, 14.3, 9.0, 3.9, 1.0]
-               }, 
-               {
-                  name: 'London',
-                  data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 
-                     16.6, 14.2, 10.3, 6.6, 4.8]
-               }
-            ];
+        }
+    },
 
-            var json = {};
-            json.title = title;
-            json.subtitle = subtitle;
-            json.xAxis = xAxis;
-            json.yAxis = yAxis;
-            json.tooltip = tooltip;
-            json.legend = legend;
-            json.series = series;
+    plotOptions: {
+        series: {
+            stacking: 'normal'
+        }
+    },
 
-            $('#container').highcharts(json);
-         });
+    tooltip: {
+        formatter: function () {
+            return '<b>' + this.series.name + ', age ' + this.point.category + '</b><br/>' +
+                'Population: ' + Highcharts.numberFormat(Math.abs(this.point.y), 0);
+        }
+    },
+
+    series: [{
+        name: 'Male',
+        data: [-2.2, -2.2, -2.3, -2.5, -2.7, -3.1, -3.2,
+            -3.0, -3.2, -4.3, -4.4, -3.6, -3.1, -2.4,
+            -2.5, -2.3, -1.2, -0.6, -0.2, -0.0, -0.0]
+    }, {
+        name: 'Female',
+        data: [2.1, 2.0, 2.2, 2.4, 2.6, 3.0, 3.1, 2.9,
+            3.1, 4.1, 4.3, 3.6, 3.4, 2.6, 2.9, 2.9,
+            1.8, 1.2, 0.6, 0.1, 0.0]
+    }]
+});
+
       </script>
-            </div>
           </div>
         </div>
       </div>
@@ -180,4 +188,4 @@
   </div>
 </body>
 
-</html>
+</html> -->
