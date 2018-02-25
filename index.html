@@ -5,23 +5,21 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="theme.css" type="text/css"> 
+  <link rel="stylesheet" href="theme.css" type="text/css">
   <script src="https://code.highcharts.com/highcharts.js"></script>
 </head>
 
 <body>
   <nav class="navbar navbar-expand-md bg-primary navbar-dark">
     <a class="navbar-brand" href="#">
-      <img class="img-fluid d-block m-1" src="images/uob_whitelogo.png" width="200" height="100">
-    </a>
+      <img class="img-fluid d-block m-1" src="images/uob_whitelogo.png" width="200" height="100"> </a>
     <div class="container">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
       <div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link" href="#">REFERENCES
-              <br>
-            </a>
+              <br> </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">DATA PAGE 1</a>
@@ -53,94 +51,68 @@
               <h1 class="display-3 text-light text-right">Secondary Header</h1>
               <p class="text-light text-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
                 aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
-            
             </div>
-            <div id="container" style="width:100%; height:400px;">
-            <script>
-              $(function () { 
-    var myChart = Highcharts.chart('container', {
-        chart: {
-            type: 'bar'
-        },
-        title: {
-            text: 'Fruit Consumption'
-        },
-        xAxis: {
-            categories: ['Apples', 'Bananas', 'Oranges']
-        },
-        yAxis: {
-            title: {
-                text: 'Fruit eaten'
-            }
-        },
-        series: [{
-            name: 'Jane',
-            data: [1, 0, 4]
-        }, {
-            name: 'John',
-            data: [5, 7, 3]
-        }]
-    });
-});
-            </script>
+            <div id="container" style="width: 100%; height: 400px;">
+              <script src="plots/test_chart.js"></script>
             </div>
           </div>
         </div>
       </div>
     </div>
-  <div class="bg-dark text-white">
-    <div class="container">
-      <div class="row">
-        <div class="p-4 col-md-3">
-          <h2 class="mb-4 text-secondary">Pingendo</h2>
-          <p class="text-white">A company for whatever you may need, from website prototyping to publishing</p>
+    <div class="bg-dark text-white">
+      <div class="container">
+        <div class="row">
+          <div class="p-4 col-md-3">
+            <h2 class="mb-4 text-secondary">Pingendo</h2>
+            <p class="text-white">A company for whatever you may need, from website prototyping to publishing</p>
+          </div>
+          <div class="p-4 col-md-3">
+            <h2 class="mb-4 text-secondary">Mapsite</h2>
+            <ul class="list-unstyled">
+              <a href="#" class="text-white">Home</a>
+              <br>
+              <a href="#" class="text-white">About us</a>
+              <br>
+              <a href="#" class="text-white">Our services</a>
+              <br>
+              <a href="#" class="text-white">Stories</a>
+            </ul>
+          </div>
+          <div class="p-4 col-md-3">
+            <h2 class="mb-4">Contact</h2>
+            <p>
+              <a href="tel:+246 - 542 550 5462" class="text-white"><i class="fa d-inline mr-3 text-secondary fa-phone"></i>+246 - 542 550 5462</a>
+            </p>
+            <p>
+              <a href="mailto:info@pingendo.com" class="text-white"><i class="fa d-inline mr-3 text-secondary fa-envelope-o"></i>info@pingendo.com</a>
+            </p>
+            <p>
+              <a href="https://goo.gl/maps/AUq7b9W7yYJ2" class="text-white" target="_blank"><i class="fa d-inline mr-3 fa-map-marker text-secondary"></i>365 Park Street, NY</a>
+            </p>
+          </div>
+          <div class="p-4 col-md-3">
+            <h2 class="mb-4 text-light">Subscribe</h2>
+            <form>
+              <fieldset class="form-group text-white"> <label for="exampleInputEmail1">Get our newsletter</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email"> </fieldset>
+              <button type="submit" class="btn btn-outline-secondary">Submit</button>
+            </form>
+          </div>
         </div>
-        <div class="p-4 col-md-3">
-          <h2 class="mb-4 text-secondary">Mapsite</h2>
-          <ul class="list-unstyled">
-            <a href="#" class="text-white">Home</a>
-            <br>
-            <a href="#" class="text-white">About us</a>
-            <br>
-            <a href="#" class="text-white">Our services</a>
-            <br>
-            <a href="#" class="text-white">Stories</a>
-          </ul>
-        </div>
-        <div class="p-4 col-md-3">
-          <h2 class="mb-4">Contact</h2>
-          <p>
-            <a href="tel:+246 - 542 550 5462" class="text-white"><i class="fa d-inline mr-3 text-secondary fa-phone"></i>+246 - 542 550 5462</a>
-          </p>
-          <p>
-            <a href="mailto:info@pingendo.com" class="text-white"><i class="fa d-inline mr-3 text-secondary fa-envelope-o"></i>info@pingendo.com</a>
-          </p>
-          <p>
-            <a href="https://goo.gl/maps/AUq7b9W7yYJ2" class="text-white" target="_blank"><i class="fa d-inline mr-3 fa-map-marker text-secondary"></i>365 Park Street, NY</a>
-          </p>
-        </div>
-        <div class="p-4 col-md-3">
-          <h2 class="mb-4 text-light">Subscribe</h2>
-          <form>
-            <fieldset class="form-group text-white"> <label for="exampleInputEmail1">Get our newsletter</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email"> </fieldset>
-            <button type="submit" class="btn btn-outline-secondary">Submit</button>
-          </form>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12 mt-3">
-          <p class="text-center text-white">© Copyright 2017 Pingendo - All rights reserved. </p>
+        <div class="row">
+          <div class="col-md-12 mt-3">
+            <p class="text-center text-white">© Copyright 2017 Pingendo - All rights reserved. </p>
+          </div>
         </div>
       </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <pingendo onclick="window.open('https://pingendo.com/', '_blank')" style="cursor:pointer;position: fixed;bottom: 10px;right:10px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:180px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white">Made with Pingendo&nbsp;&nbsp;
+      <img src="https://pingendo.com/site-assets/Pingendo_logo_big.png" class="d-block" alt="Pingendo logo" height="16">
+    </pingendo>
   </div>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <pingendo onclick="window.open('https://pingendo.com/', '_blank')" style="cursor:pointer;position: fixed;bottom: 10px;right:10px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:180px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white">Made with Pingendo&nbsp;&nbsp;
-    <img src="https://pingendo.com/site-assets/Pingendo_logo_big.png" class="d-block" alt="Pingendo logo" height="16">
-  </pingendo>
 </body>
 
 </html>
